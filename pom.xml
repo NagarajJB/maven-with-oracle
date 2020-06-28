@@ -5,7 +5,7 @@
 
 	<groupId>com.njb</groupId>
 	<artifactId>maven-with-oracle</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>maven-with-oracle</name>
@@ -53,5 +53,26 @@
 			</releases>
 		</pluginRepository>
 	</pluginRepositories>
+
+	<build>
+		<extensions>
+			<extension>
+				<groupId>io.packagecloud.maven.wagon</groupId>
+				<artifactId>maven-packagecloud-wagon</artifactId>
+				<version>0.0.6</version>
+			</extension>
+		</extensions>
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>packagecloud.release</id>
+			<url>packagecloud+https://packagecloud.io/NagarajaJB/release</url>
+		</repository>
+		<snapshotRepository>
+			<id>packagecloud.snapshot</id>
+			<url>packagecloud+https://packagecloud.io/NagarajaJB/snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 </project>
